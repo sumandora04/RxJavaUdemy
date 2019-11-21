@@ -166,12 +166,13 @@ public class SecondScreen extends AppCompatActivity {
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 //.distinct()
-                .skipWhile(new Predicate<Integer>() {
-                    @Override
-                    public boolean test(Integer integer) throws Exception {
-                        return integer > 2;
-                    }
-                })
+
+//                .skipWhile(new Predicate<Integer>() {
+//                    @Override
+//                    public boolean test(Integer integer) throws Exception {
+//                        return integer > 2;
+//                    }
+//                })
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
